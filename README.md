@@ -19,7 +19,7 @@ Tablero del proyecto: (https://github.com/Yaeldroid/califiapp.git)
 
 | HU | Historia | Estado |
 |----|----------|--------|
-| HU-01 | Registrar alumnos (máximo 30) | Terminada |
+| HU-01 | Registrar alumnos (máximo 30, sin nombres repetidos)| Terminada|
 | HU-02 | Capturar calificaciones de 0 a 10 | Terminada |
 | HU-03 | Calcular promedio y estatus (aprueba con 6) | Terminada |
 | HU-04 | Mostrar reporte del grupo | Terminada |
@@ -40,7 +40,7 @@ Si `python` no se reconoce, usa `py src/main.py`.
 python -m unittest discover -s tests -v
 ```
 
-Debe decir **Ran 12 tests** y **OK**.
+Debe decir **Ran 13 tests** y **OK**.
 
 ## Estructura del proyecto
 
@@ -53,9 +53,16 @@ califiapp/
 │   ├── main.py            (menú de consola)
 │   └── calificaciones.py  (lógica de las HU)
 └── tests/
-    └── test_calificaciones.py  (12 pruebas)
+    └── test_calificaciones.py  (13 pruebas)
 ```
+## Definicion de terminado  (DoD)
 
+Una tarjeta pasa a **Terminado** solo si cumple las 4:
+
+-[] cumple los criterios de aceptacion es su historia.
+-[] Las pruebas pasan:``python -m unittest discover -s tests` dice **OK**
+-[] El copiloto reviso el cambio en el pull Request.
+-[] EL README quedo actualizado.
 ## Reglas del equipo para usar Git
 
 - Antes de cada commit corre las pruebas: deben decir **OK**.
@@ -67,6 +74,7 @@ califiapp/
 - Nunca borres ni modifiques la carpeta oculta `.git`.
 - Haz `git push` **antes de apagar** o reiniciar la computadora.
 - Antes de empezar a trabajar en equipo, trae lo nuevo con `git pull`.
+- Cada historia se trabaja en su **propia rama** (ejemplo: `hu-01-nombre-repetido`) y entra a `main` por Pull Request.
 - Cierra tu sesión de GitHub al terminar: la PC del laboratorio es compartida.
 
 Respaldo en la nube: este repositorio en GitHub (público, para que el docente lo revise).
